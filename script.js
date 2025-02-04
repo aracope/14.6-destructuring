@@ -2,35 +2,35 @@
 let facts = {numPlanets: 8, yearNeptuneDiscovered: 1846};
 let {numPlanets, yearNeptuneDiscovered} = facts;
 
-console.log(numPlanets); // ?
-console.log(yearNeptuneDiscovered); // ?
+console.log(numPlanets); // 8
+console.log(yearNeptuneDiscovered); // 1846
 
 // What does the following code return/print?
-let planetFacts = {
-    numPlanets: 8,
-    yearNeptuneDiscovered: 1846,
-    yearMarsDiscovered: 1659
-  };
+// let planetFacts = {
+//     numPlanets: 8,
+//     yearNeptuneDiscovered: 1846,
+//     yearMarsDiscovered: 1659
+//   };
   
-  let {numPlanets, ...discoveryYears} = planetFacts;
+//   let {numPlanets, ...discoveryYears} = planetFacts;
   
-  console.log(discoveryYears); // ?
+//   console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
 
 // What does the following code return/print?
   function getUserData({firstName, favoriteColor="green"}){
     return `Your name is ${firstName} and you like ${favoriteColor}`;
   }
-  
-  getUserData({firstName: "Alejandro", favoriteColor: "purple"}) // ?
-  getUserData({firstName: "Melissa"}) // ?
-  getUserData({}) // ?
+
+  console.log(getUserData({firstName: "Alejandro", favoriteColor: "purple"})); // Your name is Alejandro and you like purple
+  console.log(getUserData({firstName: "Melissa"})); // Your name is Melissa and you like green
+  console.log(getUserData({})); // Your name is undefined and you like green
 
   // What does the following code return/print?
   let [first, second, third] = ["Maya", "Marisa", "Chi"];
 
-  console.log(first); // ?
-  console.log(second); // ?
-  console.log(third); // ?
+  console.log(first); // Maya
+  console.log(second); // Marisa
+  console.log(third); // Chi
 
 
   // What does the following code return/print?
@@ -42,28 +42,35 @@ let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
   "Brown paper packages tied up with strings"
 ]
 
-console.log(raindrops); // ?
-console.log(whiskers); // ?
-console.log(aFewOfMyFavoriteThings); // ?
+console.log(raindrops); // Raindrops on roses
+console.log(whiskers); // whiskers on kittens
+console.log(aFewOfMyFavoriteThings); // (3) [0: 'Bright copper kettles', 1: 'warm woolen mittens', 2: 'Brown paper packages tied up with strings'] length: 3
 
 // What does the following code return/print?
 let numbers = [10, 20, 30];
 [numbers[1], numbers[2]] = [numbers[2], numbers[1]]
   
-console.log(numbers) // ?
+console.log(numbers) // 0: 10 | 1: 30 | 2: 20 | length: 3
 
 //Refactor to ES2015.
 
-var obj = {
+// var obj = {
+//     numbers: {
+//       a: 1,
+//       b: 2
+//     }
+//   };
+  
+//   var a = obj.numbers.a;
+//   var b = obj.numbers.b;
+
+let obj = {
     numbers: {
       a: 1,
       b: 2
     }
   };
-  
-  var a = obj.numbers.a;
-  var b = obj.numbers.b;
-
+  let { numbers: { a, b } } = obj;
 
 // ES2015.
 
