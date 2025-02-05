@@ -72,12 +72,15 @@ let obj = {
   };
   let { numbers: { a, b } } = obj;
 
-// ES2015.
+// Refactor to ES2015.
 
-var arr = [1, 2];
-var temp = arr[0];
-arr[0] = arr[1];
-arr[1] = temp;
+// var arr = [1, 2];
+// var temp = arr[0];
+// arr[0] = arr[1];
+// arr[1] = temp;
+
+const arr = [1, 2];
+[arr[0], arr[1]] = [arr[1], arr[0]]; 
 
 // Write a function called raceResults which accepts a single array argument. It should return an object with the keys first, second, third, and rest.
 // first: the first element in the array
@@ -89,7 +92,7 @@ arr[1] = temp;
 // Destructuring
 // Enhanced object assignment (same key/value shortcut)
 
-// raceResults(['Tom', 'Margaret', 'Allison', 'David', 'Pierre'])
+raceResults(['Tom', 'Margaret', 'Allison', 'David', 'Pierre'])
 /*
   {
     first: "Tom",
@@ -98,3 +101,5 @@ arr[1] = temp;
     rest: ["David", "Pierre"]
   }
 */
+
+const raceResults = ([first, second, third, ...rest]) => ({ first, second, third, rest });
